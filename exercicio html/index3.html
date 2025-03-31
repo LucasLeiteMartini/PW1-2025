@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Instituto de Computação</title>
+</head>
+<body>
+    <h1>Formulário de Contato</h1>
+    <fieldset>
+        <legend>Dados Básicos</legend>
+        Nome <input type="text" name="nome" id="nome"><br>
+        E-mail <input type="email" name="email" id="email" placeholder="seunome@dominio.com.br"><br>
+        Website <input type="url" name="url" id="url" placeholder="http://www.dominio.com.br"><br>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Seu cuso no Instituto de Computação</legend>
+        <input type="radio" name="curso" id="CC" checked><label for="CC">Ciência da Computação</label><br>
+        <input type="radio" name="curso" id="SI"><label for="SI">Sistemas de Informação</label><br>
+        <input type="radio" name="curso" id="EC"><label for="EC">Engenharia da Computação</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Assinale as linguagens já usadas por você:</legend>
+        <input type="checkbox" name="linguagens" id="Java"><label for="Java">Java</label>
+        <input type="checkbox" name="linguagens" id="C"><label for="C">C</label>
+        <input type="checkbox" name="linguagens" id="C++"><label for="C++">C++</label>
+        <input type="checkbox" name="linguagens" id="Perl"><label for="Perl">Perl</label>
+        <input type="checkbox" name="linguagens" id="Python"><label for="Python">Python</label>
+        <input type="checkbox" name="linguagens" id="JavaScript"><label for="JavaScript">JavaScript</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dados Complementares</legend>
+        Cor Favorita <input type="color" name="Cor" id="corFavorita"><br>
+        Data de Nascimento <input type="date" name="Nasicmento" id="dataNascimento"><br>
+        Ano de Entrada em seu Curso do IComp <input type="number" name="Entrada" id="anoEntrada"><br>
+        Nota para este site <input type="range" name="nota" id="notaSite">
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Área de atuação</legend>
+        <select name="area" id="areaAtuacao">
+            <option value="1">Banco de Dados</option>
+            <option value="2">Educação a Distância</option>
+            <option value="3">Engenharia de Software</option>
+            <option value="4">Otimização</option>
+            <option value="5">Programação para Web</option>
+            <option value="6">Recuperação de Informação</option>
+            <option value="7">Rede de Computadores</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Submeta seu curriculo vitae</legend>
+        <input type="file" name="curriculo" id="arquivoCurriculo">
+    </fieldset>
+
+    <fieldset>
+        <legend>Digite sua Mensagem</legend>
+        <textarea name="mensagem" id="mensagem" cols="100" rows="5">Este é o valor padrão</textarea>
+    </fieldset>
+
+</body>
+</html>
