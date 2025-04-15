@@ -1,8 +1,4 @@
 (function jokenpo() {
-    console.log("Escolha sua jogada:\n" +
-                "1 - Pedra\n" +
-                "2 - Papel\n" +
-                "3 - Tesoura\n" )
 
     let jogador = parseInt(prompt("Escolha um numero de 1 a 3."))
     do{
@@ -12,19 +8,23 @@
         }
     }while(isNaN(jogador));
 
-    let computador = Math.floor((Math.random()*3) + 1);
-
-    switch (computador){
-        case 1: console.log("O computador jogou Pedra");break;
-        case 2: console.log("O computador jogou Papel");break;
-        case 3: console.log("O computador jogou Tesoura");break;
-    }
 
 
-    let flag = true
     let score = 0;
 
-    while(flag){
+    while(true){
+        console.log("Escolha sua jogada:\n" +
+            "1 - Pedra\n" +
+            "2 - Papel\n" +
+            "3 - Tesoura\n" )
+
+        let computador = Math.floor((Math.random()*3) + 1);
+
+        switch (computador){
+            case 1: console.log("O computador jogou Pedra");break;
+            case 2: console.log("O computador jogou Papel");break;
+            case 3: console.log("O computador jogou Tesoura");break;
+    }
         if(
             (jogador === 1 && computador === 3) ||
             (jogador === 2 && computador === 1) ||
@@ -37,7 +37,7 @@
             console.log("O jogo empatou!")
             jogador = parseInt(prompt("Escolha novamente um numero de 1 a 3."))
         }else{
-            flag = false
+            break;
         }
     }
 
