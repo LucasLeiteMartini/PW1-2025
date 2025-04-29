@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Um Gráfico de Barras</h1>
+    
+    <form id="alturas">
+        <label>Informe a altura das barras:
+            <input type="number" name="altura1" id="altura1" class="altura">
+            <input type="number" name="altura2" id="altura2" class="altura">
+            <input type="number" name="altura3" id="altura3" class="altura">
+            <input type="number" name="altura4" id="altura4" class="altura">
+            <input type="number" name="altura5" id="altura5" class="altura"><br>
+        </label>
+        
+        <label for="largura">Informe a largura das barras: </label>
+        <input type="number" name="largura" id="largura" class="largura"><br><br>
+        
+        <button type="submit">Desenhar Gráfico</button>
+    </form>
+    
+    <div id="grafico">
+    </div>
+<script type="module" src="grafico.js"></script>
+</body>
+</html>

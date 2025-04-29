@@ -1,0 +1,10 @@
+.altura, .largura{
+    width: 50px;
+}
+
+#grafico{
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    margin-top: 30px;
+}
