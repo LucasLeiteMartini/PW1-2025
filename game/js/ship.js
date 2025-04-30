@@ -21,6 +21,7 @@ class Ship {
     changeDirection(giro) {
         if(this.direction + giro >= 0 && this.direction + giro <= 2){
             this.direction = this.direction + giro;
+            this.element.src = directions[this.direction]
         }
     }
 
