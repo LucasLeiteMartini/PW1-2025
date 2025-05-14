@@ -11,8 +11,8 @@ class EnemyShip {
         space.element.appendChild(this.element)
     }
 
-    move(){
-        this.element.style.top = `${parseInt(this.element.style.top) + 1}px`
+    move(speed){
+        this.element.style.top = `${parseInt(this.element.style.top) + speed}px`
     }
 }
 
@@ -22,6 +22,6 @@ export const createEnemyShip = () => {
     if(Math.random() < PROB_ENEMY_SHIP) enemyShip.push(new EnemyShip())
 }
 
-export const moveEnemyShip = () => {
-    enemyShip.forEach(e => e.move())
+export const moveEnemyShip = (speed) => {
+    enemyShip.forEach(e => e.move(speed))
 }
