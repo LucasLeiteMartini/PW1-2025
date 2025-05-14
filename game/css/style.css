@@ -1,3 +1,9 @@
+body{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
 #space{
     background-image: url("../assets/png/Background/starBackground.png");
     position: relative;
@@ -8,6 +14,42 @@
     position: absolute;
 }
 
+.ship-shot{
+    position: absolute;
+}
+
+#vidas{
+    position: absolute;
+    left: 400px;
+    top: 5px;
+}
+
+#pontuacao{
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    left: 520px;
+    top: 6px;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
 .enemy-ship{
     position: absolute;
+}
+
+#menu{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 350px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    text-align: center;
 }
