@@ -26,8 +26,18 @@ class Ship {
     }
 
     move(){
-        if(this.direction === 0) this.element.style.left = `${parseInt(this.element.style.left) - 1}px`;
-        if(this.direction === 2) this.element.style.left = `${parseInt(this.element.style.left) + 1}px`;
+        if(this.direction === 0) this.element.style.left = `${parseInt(this.element.style.left) - 2}px`;
+        if(this.direction === 2) this.element.style.left = `${parseInt(this.element.style.left) + 2}px`;
+        this.element.src = directions[this.direction]
+        if(parseInt(this.element.style.left) < 0){
+
+            this.element.style.left = "0px"
+
+        }else if(parseInt(this.element.style.left) > TAM_X - 99){
+
+            this.element.style.left = "501px"
+
+        }
     }
 }
 
