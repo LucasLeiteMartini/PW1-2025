@@ -7,17 +7,17 @@ class ShipLaser {
         this.element.className = "ship-shot"
         this.element.src = "assets/png/laserGreen.png"
         this.element.style.bottom = "98px"
-        this.element.style.left = `${ship.element.offsetLeft + 45}px`
+        this.element.style.left = `${ship.element.offsetLeft + ship.element.width/2 - 1}px`
         space.element.appendChild(this.element)
     }
 
     move(){
-        this.element.style.bottom = `${parseInt(this.element.style.bottom) + 20}px`
+        this.element.style.bottom = `${parseInt(this.element.style.bottom) + 15}px`
     }
 
 }
 
-const shots = []
+export const shots = []
 
 export function createShot(){
     shots.push(new ShipLaser())
