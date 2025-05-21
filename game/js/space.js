@@ -9,7 +9,7 @@ class Space{
     }
 
     move(){
-        this.element.style.backgroundPositionY = `${parseInt(this.element.style.backgroundPositionY) + 1}px`;
+        this.element.style.backgroundPositionY = `${parseInt(this.element.style.backgroundPositionY) + 2}px`;
     }
 }
 
