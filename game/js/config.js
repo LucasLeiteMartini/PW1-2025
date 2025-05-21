@@ -1,4 +1,4 @@
-export const FPS = 60
+export const FPS = 1000 / 60
 export const TAM_X = 600
 export const TAM_Y = 900
 
