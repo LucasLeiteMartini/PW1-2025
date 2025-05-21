@@ -4,62 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="icon" href="assets/png/player.png" type="image/x-icon">
+    <title>Space Shooter</title>
 </head>
 <body>
     <div id="space">
         <div id="vidas">
-            <img src="assets/png/life.png" alt="vida">
-            <img src="assets/png/life.png" alt="vida">
-            <img src="assets/png/life.png" alt="vida">
+            <img id="vida1" src="assets/png/life.png" alt="vida">
+            <img id="vida2" src="assets/png/life.png" alt="vida">
+            <img id="vida3" src="assets/png/life.png" alt="vida">
         </div>
         <span id="pontuacao"><strong>000000</strong></span>
-        <div id="menu">
-            <table>
-                <thead>
-                <tr>
-                    <th colspan="2">
-                        Teclas do Jogo
-                    </th>
-                </tr>
-                </thead>
-                <tr>
-                    <td>
-                        <strong>Começar o Jogo:</strong>
-                    </td>
-                    <td>
-                        Espaço
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <strong>Atirar:</strong>
-                    </td>
-                    <td>
-                        Espaço
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>Pausar/Continuar:</strong>
-                    </td>
-                    <td>
-                        p
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <strong>Reiniciar:</strong>
-                    </td>
-                    <td>
-                        r
-                    </td>
-                </tr>
-            </table>
-        </div>
-        
+        <table id="menu">
+            <thead>
+            <tr>
+                <th colspan="2">
+                    Teclas do Jogo
+                </th>
+            </tr>
+            </thead>
+            <tr>
+                <td>
+                    <strong>Começar o Jogo:</strong>
+                </td>
+                <td>
+                    Espaço
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <strong>Atirar:</strong>
+                </td>
+                <td>
+                    Espaço
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Pausar/Continuar:</strong>
+                </td>
+                <td>
+                    p
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <strong>Reiniciar:</strong>
+                </td>
+                <td>
+                    r
+                </td>
+            </tr>
+        </table>
     </div>
     
     <script type="module" src="js/game.js"></script>

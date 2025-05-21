@@ -1,7 +1,8 @@
 body{
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 5px;
+    background-color: black;
 }
 
 #space{
@@ -22,13 +23,14 @@ body{
     position: absolute;
     left: 400px;
     top: 5px;
+    z-index: 1;
 }
 
 #pontuacao{
     position: absolute;
     font-size: 24px;
     color: white;
-    left: 520px;
+    left: 518px;
     top: 6px;
     font-family: Arial, sans-serif;
     z-index: 1;
@@ -36,18 +38,18 @@ body{
 
 .enemy-ship{
     position: absolute;
+    z-index: 0;
 }
 
 #menu{
+    position: absolute;
     margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 350px;
-    background-color: white;
+    margin-top: 380px;
+    width: 300px;
+    background-color: black;
+    color: white;
     border-radius: 10px;
-}
-
-table{
-    width: 100%;
+    z-index: 1;
 }
 
 td{
