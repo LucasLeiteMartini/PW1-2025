@@ -1,10 +1,15 @@
-import {FPS} from "./config.js";
+import {FPS, points} from "./config.js";
 import {space} from "./space.js";
 import {ship} from "./ship.js";
 import {createEnemyShip, enemyShips, moveEnemyShip} from "./enemyShip.js";
 import {createShot, moveShot, shots} from "./shipLaser.js";
 
-//Vairáveis para controle de ações
+const pontuacao = document.getElementById("pontuacao");
+const vidas = document.getElementsByClassName("vidas")
+
+
+
+//Variáveis para controle de ações
 let leftPressed = false;
 let rightPressed = false;
 let shotPressed = false;
@@ -19,6 +24,10 @@ let speed = 2
 
 // Variável para controle de cadência de tiro
 let shotCooldown = 0
+
+// Variáveis para vida e pontuação
+let pontuacaoCounter = 0;
+let lifeCounter = 3;
 
 /**
  * Função chamada para começar o jogo.
@@ -42,6 +51,7 @@ function run(){
     moveEnemyShip();
     moveShot()
     checkOutOfBounds()
+    collision()
 }
 
 // Responsável por iniciar o jogo
@@ -85,7 +95,7 @@ setInterval(()=>{
 
     if(shotPressed && gameRunning && !isPaused) {
         shotCooldown++
-        if(shotCooldown % 15 === 0) {
+        if(shotCooldown % 10 === 0) {
             createShot()
         }
     }
@@ -105,8 +115,30 @@ window.addEventListener("keypress", (e)=>{
     }
 })
 
+function collision(){
+    shots.forEach((shot,shotIndex)=>{
+        enemyShips.forEach((enemyShip, enemyShipIndex)=>{
+            if(checkCollision(shot, enemyShip)){
+                shot.element.remove()
+                enemyShip.element.remove()
+
+                shots.splice(shotIndex,1)
+                enemyShips.splice(enemyShipIndex,1)
+            }
+        })
+    })
+}
 
 function checkCollision(obj1, obj2) {
+    let rect1 = obj1.element.getBoundingClientRect();
+    let rect2 = obj2.element.getBoundingClientRect();
+
+    console.log(rect1.x, rect1.y, rect2.x,rect2.y);
+
+    return (rect1.right > rect2.left &&
+            rect1.left < rect2.right &&
+            rect1.bottom > rect2.top &&
+            rect1.top < rect2.bottom)
 
 }
 
