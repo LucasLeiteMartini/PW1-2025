@@ -1,4 +1,4 @@
-import {PROB_ENEMY_SHIP, TAM_X} from "./config.js";
+import {enemyProbability, TAM_X} from "./config.js";
 import {space} from "./space.js";
 
 class EnemyShip {
@@ -20,7 +20,7 @@ class EnemyShip {
 export const enemyShips = []
 
 export const createEnemyShip = (speed) => {
-    if(Math.random() < 0.04) enemyShips.push(new EnemyShip(speed))
+    if(Math.random() < enemyProbability.enemyShip) enemyShips.push(new EnemyShip(speed))
 }
 
 /**
