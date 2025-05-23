@@ -1,8 +1,17 @@
+@font-face {
+    font-family: 'RetroByte';
+    src: url('../fonts/retrobyte/RetroByte.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     display: flex;
     justify-content: center;
     padding-top: 5px;
     background-color: black;
+    font-family: 'RetroByte', sans-serif;
+    font-size: 22px;
 }
 
 #space{
@@ -13,6 +22,7 @@ body{
 
 #ship{
     position: absolute;
+    z-index: 10;
 }
 
 .ship-shot{
@@ -28,11 +38,10 @@ body{
 
 #pontuacao{
     position: absolute;
-    font-size: 21px;
+    font-size: 28px;
     color: white;
     right: 5px;
     top: 6px;
-    font-family: Arial, sans-serif;
     z-index: 1;
 }
 
@@ -50,9 +59,31 @@ body{
     color: white;
     border-radius: 10px;
     z-index: 1;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 td{
     text-align: center;
+}
+
+button{
+    font-family: 'RetroByte', sans-serif;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+#death-menu{
+    display: none;
+    position: absolute;
+    text-align: center;
+    margin-left: 150px;
+    margin-top: 350px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    z-index: 1;
+    font-size: 22px;
 }
