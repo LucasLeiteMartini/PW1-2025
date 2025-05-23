@@ -1,4 +1,5 @@
 import {Enemy} from "./enemy.js";
+import {enemyProbability} from "./config.js";
 
 class EnemyShip extends Enemy {
     constructor(speed) {
@@ -10,8 +11,8 @@ class EnemyShip extends Enemy {
 
 export const enemyShips = []
 
-export function createEnemyShip(speed){
-    if(Math.random() < 0.04) enemyShips.push(new EnemyShip(speed))
+export function createEnemyShip(speed, modifier){
+    if(Math.random() < enemyProbability.enemyShip + modifier) enemyShips.push(new EnemyShip(speed))
 }
 
 export function moveEnemyShip() {

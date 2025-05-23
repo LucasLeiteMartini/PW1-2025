@@ -1,4 +1,5 @@
 import {Enemy} from "./enemy.js";
+import {enemyProbability} from "./config.js";
 
 class BigMeteor extends Enemy{
     constructor(speed) {
@@ -10,8 +11,8 @@ class BigMeteor extends Enemy{
 
 export const bigMeteors = []
 
-export function createBigMeteor(speed) {
-    if(Math.random() < 0.04) bigMeteors.push(new BigMeteor(speed));
+export function createBigMeteor(speed, modifier) {
+    if(Math.random() < enemyProbability.bigMeteor + modifier) bigMeteors.push(new BigMeteor(speed));
 }
 
 export function moveBigMeteor() {

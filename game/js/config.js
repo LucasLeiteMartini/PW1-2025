@@ -13,10 +13,10 @@ export const points = {
 }
 
 export const enemyProbability = {
-    bigMeteor: (baseScale / points.bigMeteor) * (16 / intervalMs),
-    ufo: (baseScale / points.ufo) * (16 / intervalMs),
-    enemyShip: (baseScale / points.enemyShip) * (16 / intervalMs),
-    smallMeteor: (baseScale / points.smallMeteor) * (16 / intervalMs),
+    bigMeteor: 0.0001,
+    ufo: 0.005,
+    enemyShip: 0.009,
+    smallMeteor: 0.005,
 }
 
 export const speed = {

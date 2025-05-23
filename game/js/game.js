@@ -9,8 +9,11 @@ import {createEnemyUfo, enemyUfos, moveEnemyUfo} from "./ufo.js";
 
 const pontuacao = document.getElementById("pontuacao");
 const vidas = document.getElementsByClassName("vidas")
+const botao = document.getElementById("button")
 
-
+botao.onclick = ()=>{
+    reset()
+}
 
 //Variáveis para controle de ações
 let leftPressed = false;
@@ -30,6 +33,7 @@ let pointsCounter = 0;
 let lifeCounter = 0;
 
 
+let modifier = 0.01
 let spdGrowth = 0.2
 let spdMultiplier = 1;
 let minSpd = 1
@@ -54,10 +58,10 @@ function pause(){
  */
 function run(){
     space.move()
-    createEnemyShip(getRandomSpd(speed.enemyShip.min, speed.enemyShip.max))
-    createSmallMeteor(getRandomSpd(speed.smallMeteor.min, speed.smallMeteor.max))
-    createBigMeteor(getRandomSpd(speed.bigMeteor.min, speed.bigMeteor.max))
-    createEnemyUfo(getRandomSpd(speed.ufo.min, speed.ufo.max))
+    createEnemyShip(getRandomSpd(speed.enemyShip.min, speed.enemyShip.max), modifier)
+    createSmallMeteor(getRandomSpd(speed.smallMeteor.min, speed.smallMeteor.max), modifier)
+    createBigMeteor(getRandomSpd(speed.bigMeteor.min, speed.bigMeteor.max), modifier)
+    createEnemyUfo(getRandomSpd(speed.ufo.min, speed.ufo.max), modifier)
     moveEnemyShip()
     moveSmallMeteor()
     moveBigMeteor()
@@ -73,13 +77,19 @@ function run(){
     if(lifeCounter > 3){
         pause()
         gameRunning = false
+        document.getElementById("death-menu").style.display = "block"
     }
 }
 
-setInterval(()=>{
-    spdMultiplier += spdMultiplier * spdGrowth
-    alert("speed aumentou")
-}, 60000)
+function spd(){
+    if(gameRunning && !isPaused){
+        setInterval(()=>{
+            spdMultiplier += spdMultiplier * spdGrowth
+            alert("speed aumentou")
+        }, 60000)
+    }
+}
+
 
 function getRandomSpd(minSpd, maxSpd){
     const spd = Math.random() * (maxSpd - minSpd) + minSpd;
@@ -284,6 +294,10 @@ function checkOutOfBounds(){
     })
 }
 
+function reset(){
+    window.location.reload()
+}
+
 // Responsável por alternar movimento/tiro da nave
 window.addEventListener("keydown", (e)=>{
     if(e.key === "ArrowRight") rightPressed = true
@@ -312,7 +326,7 @@ setInterval(()=>{
 
     if(shotPressed && gameRunning && !isPaused) {
         shotCooldown++
-        if(shotCooldown % 1 === 0) {
+        if(shotCooldown % 8 === 0) {
             createShot()
         }
     }
@@ -333,5 +347,5 @@ window.addEventListener("keypress", (e)=>{
 })
 
 window.addEventListener('keypress', (e)=>{
-    if(e.key === "r") window.location.reload()
+    if(e.key === "r") reset()
 })

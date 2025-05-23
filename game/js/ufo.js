@@ -1,4 +1,5 @@
 import {Enemy} from "./enemy.js";
+import {enemyProbability} from "./config.js";
 
 class Ufo extends Enemy {
     constructor(speed) {
@@ -10,8 +11,8 @@ class Ufo extends Enemy {
 
 export const enemyUfos = []
 
-export function createEnemyUfo(speed) {
-    if(Math.random() < 0.04) enemyUfos.push(new Ufo(speed));
+export function createEnemyUfo(speed, modifier) {
+    if(Math.random() < enemyProbability.ufo + modifier) enemyUfos.push(new Ufo(speed));
 }
 
 export function moveEnemyUfo() {
