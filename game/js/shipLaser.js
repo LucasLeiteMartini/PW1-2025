@@ -5,7 +5,7 @@ class ShipLaser {
     constructor() {
         this.element = document.createElement("img");
         this.element.className = "ship-shot"
-        this.element.src = "assets/png/laserGreen.png"
+        this.element.src = "assets/png/laserRed.png"
         this.element.style.bottom = "98px"
         this.element.style.left = `${ship.element.offsetLeft + ship.element.width/2 - 1}px`
         space.element.appendChild(this.element)
